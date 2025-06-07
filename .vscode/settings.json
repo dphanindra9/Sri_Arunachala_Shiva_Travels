@@ -1,11 +1,13 @@
 {
-  "liveServer.settings.port": 5501,
+  "liveServer.settings.port": 5503,
   "github.copilot.enable": {
-    "*": false,
+    "*": true,
     "plaintext": false,
     "markdown": false,
     "scminput": false,
     "typescript": true,
-    "github.copilot.enable": false
+    "github.copilot.enable": false,
+    "dart": true,
+    "html": true
   }
 }
