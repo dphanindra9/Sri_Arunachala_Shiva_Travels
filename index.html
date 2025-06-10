@@ -124,6 +124,9 @@
         font-size: 1.2rem; /* Increase text size on hover */
         transform: scale(1.03); /* Optional: slight grow effect */
       }
+      .close-btn {
+        color: white;
+      }
       @media (max-width: 768px) {
         .icon-container {
           display: flex;
@@ -138,6 +141,26 @@
           width: 100% !important; /* Full width for small screens */
         }
       }
+      #floating-whatsapp {
+        position: fixed;
+        bottom: 20px;
+        width: 50px;
+        height: 50px;
+        right: 20px;
+        z-index: 9999;
+        padding: 10px;
+        background-color: white;
+        border-radius: 50%;
+        transition: transform 0.2s;
+        color: green;
+        font-size: 30px;
+        padding: 3px 0px 0px 10px;
+      }
+
+      #floating-whatsapp:hover {
+        transform: scale(1.1) rotate(10deg) translate(-5px);
+        text-decoration: none;
+      }
     </style>
   </head>
   <body>
@@ -145,7 +168,7 @@
     <div id="overlay"></div>
     <div class="popup" id="popup">
       <button
-        class="close-btn position-absolute top-10 end-0"
+        class="close-btn position-absolute top-10 end-0 text-white"
         onclick="closePopup()"
       >
         ✖
@@ -167,6 +190,7 @@
         <button class="button"><b>TOURS</b></button>
       </a>
     </div>
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg py-1 py-lg-1 custom-navbar">
       <div class="container-fluid">
         <a class="navbar-brand text-white" href="index.html">
@@ -354,6 +378,18 @@
         </div>
       </div>
     </div>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/9014331223" target="_blank" id="floating-whatsapp">
+      <i class="bi bi-whatsapp"></i>
+    </a>
+    <footer>
+      <div class="container-fluid bg-dark text-white text-center py-3">
+        <p class="mb-0">
+          © 2023 Sri Arunachala Shiva Travels. All rights reserved.
+        </p>
+        <p class="mb-0">Tedlance IT Solutions</p>
+      </div>
+    </footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
@@ -364,25 +400,24 @@
       rel="stylesheet"
     />
   </body>
-</html>
-
-<script>
-  document.querySelectorAll("#whatsappButton").forEach((button) => {
-    button.addEventListener("click", function () {
-      const phoneNumber = "9014331223";
-      const whatsappURL = `https://wa.me/${phoneNumber}`;
-      window.open(whatsappURL, "_blank");
+  <script>
+    document.querySelectorAll("#whatsappButton").forEach((button) => {
+      button.addEventListener("click", function () {
+        const phoneNumber = "9014331223";
+        const whatsappURL = `https://wa.me/${phoneNumber}`;
+        window.open(whatsappURL, "_blank");
+      });
     });
-  });
-  function openPopup() {
-    document.getElementById("popup").style.display = "block";
-    document.getElementById("overlay").style.display = "block";
-  }
+    function openPopup() {
+      document.getElementById("popup").style.display = "block";
+      document.getElementById("overlay").style.display = "block";
+    }
 
-  function closePopup() {
-    document.getElementById("popup").style.display = "none";
-    document.getElementById("overlay").style.display = "none";
-  }
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+      document.getElementById("overlay").style.display = "none";
+    }
 
-  window.onload = openPopup;
-</script>
+    window.onload = openPopup;
+  </script>
+</html>
